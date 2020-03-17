@@ -1,0 +1,88 @@
+/* banner */
+
+#banner {
+    width: 100%;
+    height: 500px;
+    /* margin-top: 10px; */
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* nav */
+
+nav {
+    width: 1000px;
+    height: 63px;
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+nav>button {
+    border: none;
+}
+
+nav .nav_wraper {
+    width: 1360px;
+    height: 100%;
+    margin-left: -60px;
+    transition: 1s;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 0;
+    height: 63px;
+    width: 20px;
+    background-color: #333;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover {
+    background-color: #666;
+    background-image: url(../banner/img/prev.png);
+    background-position: -5px 20px;
+}
+
+.next:hover {
+    background-color: #666;
+    background-image: url(../banner/img/next.png);
+    background-position: 5px 20px;
+}
+
+nav a {
+    float: left;
+    background: #333;
+    color: #666;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+nav .time {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.content {
+    width: 1000px;
+    margin: 10px auto;
+}
+
+#main {
+    width: 800px;
+}

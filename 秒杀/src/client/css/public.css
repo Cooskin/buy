@@ -20,6 +20,7 @@ img {
     vertical-align: top;
 }
 
+button,
 input,
 textarea {
     outline: none;
@@ -36,6 +37,10 @@ a {
 
 body {
     font-size: 14px;
+}
+
+body {
+    min-width: 1000px;
 }
 
 
@@ -59,11 +64,11 @@ body {
 /* header */
 
 header {
-    /* background-color: #f9f9f9; */
     background-color: #eee;
+    padding: 10px 0;
 }
 
-header .wrap {
+header .wraper {
     width: 1000px;
     margin: 0 auto;
 }
@@ -78,16 +83,18 @@ header .wrap {
     height: 100%;
 }
 
-nav {
-    padding: 20px;
+.btn_wraper,
+#signup_btn,
+#signin_btn,
+#user,
+#business {
+    padding: 20px 0 20px 20px;
+    color: #999999;
 }
 
-nav a {
-    padding: 20px;
+#signup_btn {
     color: #ff4400;
     font-size: 16px;
 }
 
-nav span {
-    color: #999999;
-}
+#signin_btn {}
