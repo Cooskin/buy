@@ -117,38 +117,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/index.js":[function(require,module,exports) {
-/**
- *   banner
- */
-$("#carousel_1").FtCarousel();
-/**
- *   time
- */
+})({"js/user.js":[function(require,module,exports) {
+// 列表显示隐藏
+$('.meun a').click(function () {
+  $(this).next().toggle();
+}); // 列表添加小点
 
-var nav = $('.nav_wraper');
-var num = parseInt(nav.css('margin-left'));
+var bull = '&bull;';
+$('.item_list>li').prepend(bull); // 订单高亮切换
 
-if (!(num % 60)) {
-  $('.next').click(function () {
-    navWraper(-80);
-  });
-  $('.prev').click(function () {
-    navWraper(80);
-  });
-}
-
-function navWraper(i) {
-  // var num = parseInt(nav.css('margin-left'));
-  // console.log(!(num < -380))
-  // if (!(num <= -380) && !(num > 20)) {
-  var leng = $('.nav_wraper').find('a').length;
-  console.log(leng);
-  num = num + i;
-  nav.css('margin-left', num + 'px'); // } else {
-  //     alert('1')
-  // }
-}
+$('.order_list>a').click(function () {
+  $(this).addClass('active').siblings().removeClass('active');
+});
 },{}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -353,5 +333,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
-//# sourceMappingURL=/js.00a46daa.js.map
+},{}]},{},["../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/user.js"], null)
+//# sourceMappingURL=/user.46b9e7c1.js.map
