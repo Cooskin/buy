@@ -43,3 +43,31 @@
 .img_small .active {
     border: 2px solid #ff4400;
 }
+
+.info_wrap {
+    width: 400px;
+    float: left;
+}
+
+.info_wrap h2 {
+    font-weight: normal;
+    padding: 5px;
+}
+
+.info_wrap div {
+    margin: 20px 0;
+}
+
+.gold_many em {
+    text-decoration: line-through;
+}
+
+.gold_less em {
+    font-size: 24px;
+    color: #f60;
+}
+
+.much input {
+    width: 40px;
+    text-align: center;
+}

@@ -31,3 +31,7 @@ function navWraper(i) {
         //     alert('1')
         // }
 }
+
+$('.meun>li').click(function() {
+    location.href = 'shop.html'
+})
