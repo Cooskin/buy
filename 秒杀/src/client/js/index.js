@@ -35,3 +35,14 @@ function navWraper(i) {
 $('.meun>li').click(function() {
     location.href = 'shop.html'
 })
+
+$(window).scroll(function() {
+    var top = $(window).scrollTop();
+    // console.log($(window).scrollTop())
+
+    if (top >= 630) {
+        $('.list_wrap').css({ 'position': 'fixed', 'top': '0' });
+    } else {
+        $('.list_wrap').css('position', 'relative');
+    }
+})
