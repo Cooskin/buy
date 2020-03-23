@@ -8,28 +8,36 @@ $("#carousel_1").FtCarousel();
  */
 var nav = $('.nav_wraper');
 var num = parseInt(nav.css('margin-left'));
-if (!(num % 60)) {
-    $('.next').click(function() {
-        navWraper(-80);
-    })
 
-    $('.prev').click(function() {
-        navWraper(80);
-    })
-}
+$('.next').click(function() {
+
+    navWraper(-80);
+    // alert('后面没有了')
+})
+
+$('.prev').click(function() {
+
+    navWraper(80);
+    // alert('前面没有了')
+
+})
+
 
 
 function navWraper(i) {
-    // var num = parseInt(nav.css('margin-left'));
-    // console.log(!(num < -380))
-    // if (!(num <= -380) && !(num > 20)) {
-    var leng = $('.nav_wraper').find('a').length
-    console.log(leng)
-    num = num + i;
-    nav.css('margin-left', num + 'px')
-        // } else {
-        //     alert('1')
-        // }
+    var num = parseInt(nav.css('margin-left'));
+    if (num < -380) {
+        num = -380;
+    }
+    if (num > 20) {
+        num = 20;
+    }
+    num += i;
+    if (num <= 20 && num >= -380) {
+        nav.css('margin-left', num + 'px');
+        return;
+    }
+    alert('没有了')
 }
 
 $('.meun>li').click(function() {
@@ -38,11 +46,9 @@ $('.meun>li').click(function() {
 
 $(window).scroll(function() {
     var top = $(window).scrollTop();
-    // console.log($(window).scrollTop())
-
     if (top >= 630) {
         $('.list_wrap').css({ 'position': 'fixed', 'top': '0' });
     } else {
-        $('.list_wrap').css('position', 'relative');
+        $('.list_wrap').css('position', 'static');
     }
 })

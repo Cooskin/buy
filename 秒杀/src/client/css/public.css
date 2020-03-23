@@ -142,6 +142,17 @@ header .hd_cont {
     display: none;
 }
 
+#business {
+    position: relative;
+}
+
+.boss_log {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100px;
+}
+
 
 /* footer */
 
