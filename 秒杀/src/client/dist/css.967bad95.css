@@ -3,7 +3,7 @@
 #banner {
     width: 100%;
     height: 500px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
 }
 
 #banner img {
@@ -14,10 +14,14 @@
 
 /* nav */
 
+.list_wrap {
+    width: 100%;
+}
+
 .list {
     width: 1000px;
     height: 63px;
-    margin: 10px auto;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
 }
@@ -30,7 +34,7 @@
     width: 1360px;
     height: 100%;
     margin-left: -60px;
-    transition: 0.75s;
+    transition: 0.25s;
 }
 
 .prev,
@@ -83,7 +87,7 @@
     margin: 10px auto;
 }
 
-#main {
+#mian {
     width: 800px;
 }
 

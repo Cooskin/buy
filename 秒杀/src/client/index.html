@@ -26,16 +26,15 @@
                     <span class="login_off">
                         <span>欢迎，</span>
                     <em></em>
-                    </span>
                     <a id="user" href="javascript:;"><span>个人中心</span></a>
-                    <a id="business" href="javascript:;">
-                        <span>商家中心</span>
-                        <span>></span>
+                    </span>
+                    <div id="business" class="fr">
+                        <span>商家中心<em class="icon">></em></span>
                         <ul class="boss_log">
-                            <li>注册开店</li>
-                            <li>商家登录</li>
+                            <li><span>注册开店</span></li>
+                            <li><span id="boss_log_btn">商家登录</span></li>
                         </ul>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -235,7 +234,7 @@
     </footer>
 
     <!-- 注册 -->
-    <div class="register clear">
+    <div class="register">
         <div class="wraper">
             <div class="hd">
                 <h3>账号注册</h3>
@@ -261,28 +260,58 @@
     </div>
 
     <!-- 登录 -->
-    <div class="login">
-        <div class="wraper">
-            <div class="hd">
-                <h3>账号登录</h3>
-                <a href="javascript:;"></a>
-            </div>
-            <div class="cont">
-                <div class="tips"></div>
-                <input type="text" placeholder="您的手机号码">
-                <input type="password" placeholder="您的密码">
-                <div class="code">
-                    <input type="text" placeholder="输入验证码">
-                    <button>点击获取验证码</button>
+    <div id="user_login">
+        <div class="login">
+            <div class="wraper">
+                <div class="hd">
+                    <h3>账号登录</h3>
+                    <a href="javascript:;"></a>
                 </div>
-                <div class="forget">
-                    <a href="javascript:;">忘记密码</a>
+                <div class="cont">
+                    <div class="tips"></div>
+                    <input type="text" placeholder="您的手机号码">
+                    <input type="password" placeholder="您的密码">
+                    <div class="code">
+                        <input type="text" placeholder="输入验证码">
+                        <button>点击获取验证码</button>
+                    </div>
+                    <div class="forget">
+                        <a href="javascript:;">忘记密码</a>
+                    </div>
+                    <a href="javascript:;">立即登录</a>
                 </div>
-                <a href="javascript:;">立即登录</a>
+                <div class="target">
+                    <span>没有账号？</span>
+                    <a href="javascript:;">马上注册</a>
+                </div>
             </div>
-            <div class="target">
-                <span>没有账号？</span>
-                <a href="javascript:;">马上注册</a>
+        </div>
+    </div>
+
+    <div id="boss_login">
+        <div class="login">
+            <div class="wraper">
+                <div class="hd">
+                    <h3>账号登录</h3>
+                    <a href="javascript:;"></a>
+                </div>
+                <div class="cont">
+                    <div class="tips"></div>
+                    <input type="text" placeholder="您的手机号码">
+                    <input type="password" placeholder="您的密码">
+                    <div class="code">
+                        <input type="text" placeholder="输入验证码">
+                        <button>点击获取验证码</button>
+                    </div>
+                    <div class="forget">
+                        <a href="javascript:;">忘记密码</a>
+                    </div>
+                    <a href="javascript:;">立即登录</a>
+                </div>
+                <div class="target">
+                    <span>没有账号？</span>
+                    <a href="javascript:;">马上注册</a>
+                </div>
             </div>
         </div>
     </div>
