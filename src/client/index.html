@@ -24,9 +24,10 @@
                     <a id="signup_btn" href="javascript:;">免费注册</a>
                     </span>
                     <span class="login_off">
-                        <span>欢迎，</span>
-                    <em></em>
-                    <a id="user" href="javascript:;"><span>个人中心</span></a>
+                        <span>欢迎，<em></em></span>
+                    <a id="user" href="user.html">
+                        <span>个人中心</span>
+                    </a>
                     </span>
                     <div id="business" class="fr">
                         <span>商家中心<em class="icon">></em></span>
@@ -35,6 +36,7 @@
                             <li><span id="boss_log_btn">商家登录</span></li>
                         </ul>
                     </div>
+                    <button class="out">退出登录</button>
                 </div>
             </div>
         </div>
@@ -45,7 +47,7 @@
                 </div>
                 <nav class="fl">
                     <a href="index.html">首页</a>
-                    <a href="shop.html">限时秒杀</a>
+                    <a href="#go">限时秒杀</a>
                 </nav>
             </div>
         </div>
@@ -63,7 +65,7 @@
             </ul>
         </div>
     </div>
-    <div class="list_wrap">
+    <div class="list_wrap" id="go">
         <div class="list">
             <button class="prev"></button>
             <div class="nav_wraper clear">
@@ -260,63 +262,32 @@
     </div>
 
     <!-- 登录 -->
-    <div id="user_login">
-        <div class="login">
-            <div class="wraper">
-                <div class="hd">
-                    <h3>账号登录</h3>
-                    <a href="javascript:;"></a>
+    <div class="login">
+        <div class="wraper">
+            <div class="hd">
+                <h3>账号登录</h3>
+                <a href="javascript:;"></a>
+            </div>
+            <div class="cont">
+                <div class="tips"></div>
+                <input id="acc" type="text" placeholder="您的手机号码">
+                <input id="pass" type="password" placeholder="您的密码">
+                <div class="code">
+                    <input type="text" placeholder="输入验证码">
+                    <button>点击获取验证码</button>
                 </div>
-                <div class="cont">
-                    <div class="tips"></div>
-                    <input type="text" placeholder="您的手机号码">
-                    <input type="password" placeholder="您的密码">
-                    <div class="code">
-                        <input type="text" placeholder="输入验证码">
-                        <button>点击获取验证码</button>
-                    </div>
-                    <div class="forget">
-                        <a href="javascript:;">忘记密码</a>
-                    </div>
-                    <a href="javascript:;">立即登录</a>
+                <div class="forget">
+                    <a href="javascript:;">忘记密码</a>
                 </div>
-                <div class="target">
-                    <span>没有账号？</span>
-                    <a href="javascript:;">马上注册</a>
-                </div>
+                <a class="logbtn" href="javascript:;">立即登录</a>
+            </div>
+            <div class="target">
+                <span>没有账号？</span>
+                <a href="javascript:;">马上注册</a>
             </div>
         </div>
     </div>
 
-    <div id="boss_login">
-        <div class="login">
-            <div class="wraper">
-                <div class="hd">
-                    <h3>账号登录</h3>
-                    <a href="javascript:;"></a>
-                </div>
-                <div class="cont">
-                    <div class="tips"></div>
-                    <input type="text" placeholder="您的手机号码">
-                    <input type="password" placeholder="您的密码">
-                    <div class="code">
-                        <input type="text" placeholder="输入验证码">
-                        <button>点击获取验证码</button>
-                    </div>
-                    <div class="forget">
-                        <a href="javascript:;">忘记密码</a>
-                    </div>
-                    <a href="javascript:;">立即登录</a>
-                </div>
-                <div class="target">
-                    <span>没有账号？</span>
-                    <a href="javascript:;">马上注册</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./banner/js/ft-carousel.min.js"></script>
     <script src="./js/login.js"></script>
