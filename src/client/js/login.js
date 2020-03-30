@@ -112,9 +112,9 @@ ws.onmessage = function(msg) {
             console.log(2)
 
             $('.login_no').hide();
-            $('.login_off').toggle().find('span>em').html(oMsg.name);
-            $('.out').toggle();
-            $('#business').toggle();
+            $('.login_off').show().find('span>em').html(oMsg.name);
+            $('.out').show();
+            $('#business').hide();
             break;
         case 'userLogin':
     }
@@ -177,26 +177,39 @@ $('.logbtn').click(function() {
                 ws.onmessage = function(msg) {
                     var oMsg = JSON.parse(msg.data);
                     console.log(oMsg);
+                    switch (oMsg.type) {
+                        case 'userLogin':
+                            break;
+                        case 'bossLogin':
+                            break;
+                    }
                     if (oMsg.type == 'userLogin') {
-                        if (parseInt(oMsg.result)) {
-                            var info = oMsg.info;
+                        function login(obj) {
+                            if (parseInt(obj.result)) {
+                                var info = obj.info;
 
-                            $('.login_no').hide();
-                            $('.login').toggle();
-                            $('.login_off').toggle().find('span>em').html(info.name);
+                                $('.login_no').hide();
+                                $('.login').toggle();
+                                $('.login_off').show().find('span>em').html(info.name);
 
-                            var log = {
-                                name: info.name,
-                                id: info.id
+
+                                var log = {
+                                    name: info.name,
+                                    id: info.id
+                                }
+
+                                $('.out').show();
+                                $('#business').hide();
+                                sessionStorage.setItem('hx191110_userLog', JSON.stringify(log))
+                                if (obj.type == 'bossLogin') {
+                                    location.href = 'chat.html'
+                                }
+                            } else {
+
+                                $('.tips').html('账号或密码不正确')
                             }
-
-                            $('.out').toggle();
-                            $('#business').toggle();
-                            sessionStorage.setItem('hx191110_userLog', JSON.stringify(log))
-                        } else {
-
-                            $('.tips').html('账号或密码不正确')
                         }
+
                     }
                 }
             }

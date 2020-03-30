@@ -27,52 +27,16 @@ wss.on('connection', function(socket) {
                 var pass = oMsg.log.pass;
 
                 var sql = 'select * from tbluser where uAcc=? and uPass=?';
-                db.get(sql, [acc, pass], function(e, data) {
-                    if (e == null) {
-                        if (data == undefined) {
-                            var obj = {
-                                type: 'userLogin',
-                                result: '0'
-                            }
-                        } else {
-                            var obj = {
-                                type: 'userLogin',
-                                result: '1',
-                                info: {
-                                    id: data.uId,
-                                    name: data.uName,
-                                }
-                            }
-                        }
-                        socket.send(JSON.stringify(obj))
-                    }
-                })
+                login(sql, [acc, pass], 'userLogin');
+
                 break;
             case 'bossLogin':
                 var acc = oMsg.log.acc;
                 var pass = oMsg.log.pass;
 
-                var sql = 'select * from tbluser where uAcc=? and uPass=?';
-                db.get(sql, [acc, pass], function(e, data) {
-                    if (e == null) {
-                        if (data == undefined) {
-                            var obj = {
-                                type: 'bossLogin',
-                                result: '0'
-                            }
-                        } else {
-                            var obj = {
-                                type: 'bossLogin',
-                                result: '1',
-                                info: {
-                                    id: data.uId,
-                                    name: data.uName,
-                                }
-                            }
-                        }
-                        socket.send(JSON.stringify(obj))
-                    }
-                })
+                var sql = 'select * from tblshop where sAcc=? and sPass=?';
+                login(sql, [acc, pass], 'bossLogin')
+
                 break;
             case 'log':
                 var sql = 'select * from tbluser where uId=?';
@@ -109,4 +73,34 @@ wss.on('connection', function(socket) {
                 break;
         }
     })
+
+    function login(str, arr, type) {
+        db.get(str, arr, function(e, data) {
+            if (e == null) {
+                if (data == undefined) {
+                    var obj = {
+                        type: type,
+                        result: '0'
+                    }
+                } else {
+                    if (type == 'userLogin') {
+                        var name = data.uName;
+                        var id = data.uId;
+                    } else {
+                        var name = data.sName;
+                        var id = data.sId;
+                    }
+                    var obj = {
+                        type: type,
+                        result: '1',
+                        info: {
+                            id: id,
+                            name: name,
+                        }
+                    }
+                }
+                socket.send(JSON.stringify(obj))
+            }
+        })
+    }
 })
